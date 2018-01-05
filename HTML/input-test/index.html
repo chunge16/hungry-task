@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML-表单练习</title>
+</head>
+<body>
+<from action="" method="get">
+    <div>
+        姓名：
+        <label for="name">
+           <input type="text" id="name" placeholder="请填写">
+        </label>
+    </div>
+    <div>
+        密码：
+        <label for="password">
+           <input type='password' id="password" placeholder="请填写">
+        </label>
+    </div>
+    <div>
+        性别：
+        <label for="male">
+           男 <input type="radio" value="male" id="male" name="sex">
+        </label>
+        <label>
+            女 <input type="radio" value="female" id="female" name="sex">
+        </label>
+    </div>
+    <div>
+        爱好：
+        <label for="read">
+            读书 <input type="checkbox" id="read">
+        </label>
+        <label for="run">
+            跑步 <input type="checkbox" id="run">
+        </label>
+        <label>
+            旅游 <input type="checkbox" id="travel">
+        </label>
+    </div>
+    <div>
+        评论：
+        <textarea rows="10" cols="50" placeholder="请填写"></textarea>
+    </div>
+    我的car:
+    <select name="cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="fiat">Fiat</option>
+        <option value="audi">Audi</option>
+    </select>
+    <br>
+    <button type="submit">按钮</button>
+</from>
+</body>
+</html>
