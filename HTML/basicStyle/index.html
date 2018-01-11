@@ -108,7 +108,7 @@
         .table-style td {
             padding: 5px 10px;
         }
-        .table-style tr:nth-child(even) {
+        .table-style tr:nth-child(odd) {
             background-color: #f1f1f1;
         }
 
@@ -124,6 +124,57 @@
         .border-none th {
             background-color: #ff9800;
             color: #000;
+        }
+        .triangle-style {
+            display: flex;
+            justify-content: space-between;
+        }
+        .triangle-style > span {
+            display: block;
+            width: 0;
+            height: 0;
+        }
+        .triangle-style > span:nth-child(1){
+            border-top: 20px solid blue;
+            border-right: 20px solid yellow;
+            border-bottom: 20px solid green;
+            border-left: 20px solid red;
+        }
+        .triangle-style > span:nth-child(2){
+            border-top: 20px solid blue;
+            border-right: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            border-left: 20px solid transparent;
+        }
+        .triangle-style > span:nth-child(3){
+            border-top: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            border-left: 20px solid red;
+        }
+        .triangle-style > span:nth-child(4){
+            border-top: 20px solid transparent;
+            border-right: 20px solid yellow;
+            border-bottom: 20px solid transparent;
+            border-left: 20px solid transparent;
+        }
+        .triangle-style > span:nth-child(5){
+            border-top: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-bottom: 20px solid green;
+            border-left: 20px solid transparent;
+        }
+        .triangle-style > span:nth-child(6){
+            border-top: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-bottom: 20px solid red;
+            border-left: 20px solid red;
+        }
+        .triangle-style > span:nth-child(7){
+            border-top: 20px solid blue;
+            border-right: 20px solid blue;
+            border-bottom: 20px solid transparent;
+            border-left: 20px solid transparent;
         }
     </style>
 </head>
@@ -209,6 +260,15 @@
         </tr>
     </table>
 
+</div>
+<div class="layout triangle-style">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
 </div>
 </body>
 </html>
