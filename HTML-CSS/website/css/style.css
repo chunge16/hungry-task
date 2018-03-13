@@ -1,0 +1,132 @@
+
+/***
+common
+***/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #fff;
+}
+img {
+    max-width: 100%;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+button {
+    outline: none;
+    border: none;
+}
+.layout {
+    padding: 100px 0;
+    width: 80%;
+    min-height: 100vh;
+    margin: 0 auto;
+    background-color: #fff;
+}
+.layout-title {
+    padding: 40px 0;
+    font-size: 18px;
+    color: #000;
+    text-align: center;
+}
+.layout-info {
+
+}
+
+
+/***
+header
+**/
+
+#header {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background: #f00000 url("../img/wallpaper.jpg") center/cover no-repeat;
+    text-align: center;
+}
+
+.header-menus {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.header-menus > img {
+    width: 80px;
+    margin: 0 20px;
+}
+.header-menus ul {
+    display: flex;
+    margin: 0;
+    padding: 20px;
+}
+.header-menus li {
+    margin-right: 15px;
+    height: auto;
+}
+.header-menus a {
+    display: inline-block;
+    padding: 4px 12px;
+    border-bottom: 4px solid transparent;
+    color: #fff;
+    font-size: 20px;
+}
+.header-menus a:hover {
+    border-bottom: 4px solid #f00000;
+    color: #999;
+}
+.header-btn-more {
+    display: inline-block;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #fff;
+    border-radius: 8px;
+    color: #f00000;
+}
+.header-btn-more:hover {
+    opacity: .8;
+    cursor: pointer;
+    color: #fff;
+    background-color: #f00000;
+}
+
+/**
+coach
+**/
+.coach {
+    color: #000;
+}
+.coach-member {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+.coach-member-item {
+    width: 40%;
+}
+.coach-member-item > p {
+    text-align: left;
+}
+
+
+
+
+
+

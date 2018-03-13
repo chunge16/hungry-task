@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3D登录框</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+    <a>
+        <i class="icon icon-user"></i>
+    </a>
+</header>
+<main class="container">
+    <div class="modal">
+        <i class="close icon icon-close"></i>
+        <div class="tabs">
+            <a href="#" class="active">登录</a>
+            <a href="#">注册</a>
+        </div>
+        <form action="/login" class="login content" method="post">
+            <p class="error-msg"></p>
+            <div class="input-field">
+                <i class="icon icon-login"></i>
+                <input class="username" type="text" placeholder="用户名" name="username">
+            </div>
+            <div class="input-field">
+                <i class="icon icon-pwd"></i>
+                <input class="password" type="password" placeholder="密码" name="password">
+            </div>
+            <button type="submit" class="login-btn">登录</button>
+        </form>
+        <form action="/register" class="register content" method="post">
+            <p class="error-msg"></p>
+            <div class="input-field">
+                <i class="icon icon-login"></i>
+                <input class="username" type="text" placeholder="用户名" name="username">
+            </div>
+            <div class="input-field">
+                <i class="icon icon-pwd"></i>
+                <input class="password" type="password" placeholder="密码" name="password">
+            </div>
+            <div class="input-field">
+                <i class="icon icon-pwd"></i>
+                <input class="password2" type="password" placeholder="再次输入密码" name="password2">
+            </div>
+            <button type="submit" class="register-btn">注册</button>
+        </form>
+    </div>
+</main>
+</body>
+</html>
