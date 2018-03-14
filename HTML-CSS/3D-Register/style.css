@@ -45,6 +45,7 @@ ul,li{
     list-style: none;
 }
 
+
 .header {
     position: absolute;
     top: 10px;
@@ -69,24 +70,47 @@ ul,li{
     min-height: 100vh;
     background: #000 url("bg.jpg") center/cover no-repeat;
 }
+
 .container .modal {
+    display: flex;
+    flex-direction: column;
     position: absolute;
     top: 50%;
     left: 50%;
     padding: 15px;
     width: 400px;
+    min-height: 300px;
     transform: translate(-50%, -50%);
     border-radius: 4px;
     border: 1px solid #e8e8e8;
     background-color: #fff;
     box-shadow: 0 0 2px rgba(0,0,0,0.4);
 }
+.container .modal.modal-login .login,
+.container .modal.modal-register .register {
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+    transition: all 1s;
+}
+.container .modal.modal-login .register,
+.container .modal.modal-register .login {
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    transition: all 1s;
+}
+
+.show {
+    display: block !important;
+}
+
+
 .container .modal .close {
     font-size: 18px;
     position: absolute;
     right: 5px;
     top: 5px;
 }
+
 .container .modal .tabs {
     display: flex;
     justify-content: space-around;
@@ -103,6 +127,9 @@ ul,li{
     border-bottom: 2px solid #444;
 }
 .container .modal .content {
+    position: absolute;
+    top: 80px;
+    left: 0;
     display: flex;
     justify-content: center;
     flex-direction: column;

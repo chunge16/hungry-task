@@ -12,13 +12,13 @@
     </a>
 </header>
 <main class="container">
-    <div class="modal">
+    <div class="modal modal-login">
         <i class="close icon icon-close"></i>
         <div class="tabs">
-            <a href="#" class="active">登录</a>
-            <a href="#">注册</a>
+            <a href="#" class="active tab-login">登录</a>
+            <a href="#" class="tab-register">注册</a>
         </div>
-        <form action="/login" class="login content" method="post">
+        <form action="/login" class="login content show-flex" method="post">
             <p class="error-msg"></p>
             <div class="input-field">
                 <i class="icon icon-login"></i>
@@ -48,5 +48,6 @@
         </form>
     </div>
 </main>
+<script src="script.js"></script>
 </body>
 </html>
