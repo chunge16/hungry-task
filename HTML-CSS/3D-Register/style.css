@@ -90,12 +90,14 @@ ul,li{
 .container .modal.modal-register .register {
     transform: rotateY(0deg);
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     transition: all 1s;
 }
 .container .modal.modal-login .register,
 .container .modal.modal-register .login {
     transform: rotateY(180deg);
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     transition: all 1s;
 }
 
@@ -171,6 +173,9 @@ ul,li{
     border-radius: 4px;
     box-shadow: 1px 1px 4px #aaa;
     cursor: pointer;
+    border: none;
+    background-color: #fff;
+    color: #000;
 }
 
 
