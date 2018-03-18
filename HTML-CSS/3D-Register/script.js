@@ -18,7 +18,6 @@ function triggerVisibleModal() {
 
 function triggerTabActive(e) {
   const tabs =  $$('.tabs > a')
-  const contents = $$('.content')
   tabs.forEach((el) => {
     if (el.classList.contains('active')){
       el.classList.remove('active')
@@ -38,6 +37,8 @@ const userBtn = $('.icon-user')
 const modal = $('.modal')
 const closeBtn = $('.icon-close')
 const tabs =  $('.tabs')
+const loginForm = $('.login')
+const registerForm = $('.register')
 
 userBtn.addEventListener('click', () => {
  triggerVisibleModal()
@@ -49,4 +50,42 @@ closeBtn.addEventListener('click', () => {
 
 tabs.addEventListener('click', (e) => {
   triggerTabActive(e.target)
+})
+
+loginForm.addEventListener('submit', function (e) {
+  e.preventDefault()
+  const msg = $('.login .error-msg')
+  let username = $('.login .username')
+  let password = $('.login .password')
+  if (!/^\w{3,8}$/.test(username.value)) {
+    return msg.innerText = '用户名需要输入3-8个字符'
+  }
+
+  if (!/^\w{6,8}$/.test(password.value)){
+    return msg.innerText = '密码需要6-8个字符'
+  }
+  this.submit()
+
+})
+
+registerForm.addEventListener('submit', function (e) {
+  e.preventDefault()
+  const msg = $('.register .error-msg')
+  let username = $('.register .username')
+  let password = $('.register .password')
+  let againPassword = $('.register .password2')
+
+  if (!/^\w{3,8}$/.test(username.value)) {
+    return msg.innerText = '用户名需要输入3-8个字符'
+  }
+
+  if (!/^\w{6,8}$/.test(password.value)){
+    return msg.innerText = '密码需要6-8个字符'
+  }
+
+  if (password.value !== againPassword.value) {
+    return msg.innerText = '前后密码不一致'
+  }
+
+  this.submit()
 })
