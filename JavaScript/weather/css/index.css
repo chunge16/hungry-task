@@ -1,0 +1,153 @@
+
+body {
+    font: 14px/1.5 Arial;
+    color: #fff;
+}
+.weather {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(6,135,147,0.5);
+}
+.current {
+    position: relative;
+    width: 100%;
+    min-height: 70vh;
+    height: 460px;
+}
+.current .icon::before {
+    font-size: 16px;
+    margin: 0 5px;
+}
+.current .city {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+.current .city .city-name {
+    font-size: 28px;
+    height: 40px;
+    line-height: 40px;
+}
+.current .city .data {
+    line-height: 30px;
+    font-size: 18px;
+    color: #fff;
+}
+.current .city .last_update {
+    margin-top: 18px;
+    width: 100px;
+    height: 28px;
+    line-height: 28px;
+    background-color: rgba(0,0,0,0.4);
+    text-align: center;
+    border-radius: 28px;
+}
+.current .today {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.current .today .today-icon {
+    display: block;
+    margin: 0 auto;
+    width: 128px;
+    height: 128px;
+}
+
+.current .today .temperature {
+    height: 140px;
+    line-height: 140px;
+    text-align: center;
+    font-size: 125px;
+}
+
+.current .today .detail{
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-around;
+    width: 80%;
+    height: 40px;
+    line-height: 41px;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    border-radius: 99px;
+    background-color: rgba(0,0,0,0.3);
+    transition: background-color ease 0.3s;
+}
+.current .today .detail:hover {
+    background-color: rgba(0,0,0,0.5);
+}
+.current .today .detail > span {
+    flex: 1;
+    text-align: center;
+}
+
+.weather .future {
+    display: flex;
+    flex-flow: row wrap;
+    background-color: rgba(0,0,0,0.75);
+}
+.weather .future .future-day:hover {
+    background-color: rgba(255,255,255,0.05)
+}
+.weather .future .future-day {
+    transition: background-color ease-in-out .3s;
+}
+.weather .future .title {
+    padding: 15px 0;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+}
+.weather .future .future-day {
+    flex: 1;
+    height: 240px;
+    text-align: center;
+    color: #cbcbcb;
+}
+
+.future .future-day .data {
+    padding-top: 10px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+}
+.future .future-day .day {
+    height: 20px;
+    line-height: 20px;
+    font-size: 16px;
+}
+
+.future .future-day .daytime-night {
+    display: flex;
+    padding: 10px;
+    justify-content: space-evenly;
+}
+.future .future-day .daytime-night > div {
+    flex-shrink: 1;
+}
+.future .future-day .daytime-night > div img {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.future .future-day .daytime-night > div p:last-child {
+    height: 50px;
+    line-height: 50px;
+    font-size: 24px;
+}
+.future .wind {
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+}
+
+
+
