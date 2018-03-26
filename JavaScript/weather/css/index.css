@@ -7,12 +7,12 @@ body {
     box-sizing: border-box;
     width: 100%;
     min-height: 100vh;
-    background-color: rgba(6,135,147,0.5);
+    background-color: rgba(6,135,147, .8);
 }
 .current {
     position: relative;
     width: 100%;
-    min-height: 70vh;
+    min-height: 100vh;
     height: 460px;
 }
 .current .icon::before {
@@ -47,7 +47,6 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 50%;
     transform: translate(-50%, -50%);
 }
 
@@ -67,9 +66,8 @@ body {
 
 .current .today .detail{
     display: flex;
-    margin: 0 auto;
     justify-content: space-around;
-    width: 80%;
+    padding: 0 10px;
     height: 40px;
     line-height: 41px;
     font-size: 16px;
@@ -83,8 +81,7 @@ body {
     background-color: rgba(0,0,0,0.5);
 }
 .current .today .detail > span {
-    flex: 1;
-    text-align: center;
+    flex-shrink: 0;
 }
 
 .weather .future {
