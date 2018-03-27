@@ -3,6 +3,9 @@ body {
     font: 14px/1.5 Arial;
     color: #fff;
 }
+body * {
+    box-sizing: border-box;
+}
 .weather {
     box-sizing: border-box;
     width: 100%;
@@ -58,10 +61,10 @@ body {
 }
 
 .current .today .temperature {
-    height: 140px;
-    line-height: 140px;
-    text-align: center;
-    font-size: 125px;
+   height: 140px;
+   line-height: 140px;
+   text-align: center;
+   font-size: 125px;
 }
 
 .current .today .detail{
@@ -83,6 +86,66 @@ body {
 .current .today .detail > span {
     flex-shrink: 0;
 }
+.current .suggestion {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+}
+.current .suggestion li{
+    position: relative;
+    padding: 5px 20px;
+    flex-shrink: 0;
+    font-size: 16px;
+    text-align: center;
+    transition: all .3s;
+    cursor: pointer;
+}
+.current .suggestion li i {
+    font-size: 16px;
+    margin-right: 5px;
+}
+.current .suggestion li .dropdown {
+    display: none;
+    position: absolute;
+    padding: 15px;
+    width: 400px;
+    max-width: 90vw;
+    height: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 50px;
+    border-radius: 99px;
+    font-size: 14px;
+    background-color: rgba(0,0,0,0.3);
+}
+.current .suggestion li .dropdown::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-top: 5px solid rgba(0,0,0,0.3);
+    border-left: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid transparent;
+    transform: translateX(-50%);
+}
+
+.current .suggestion li:hover {
+    background-color: rgba(0,0,0,0.3);
+}
+.current .suggestion li:hover .dropdown {
+    display: block;
+}
+
+
 
 .weather .future {
     display: flex;
@@ -110,7 +173,7 @@ body {
 
 .future .future-day .data {
     padding-top: 10px;
-    height: 20px;
+    height: auto;
     line-height: 20px;
     font-size: 14px;
 }
@@ -145,6 +208,3 @@ body {
     line-height: 20px;
     font-size: 14px;
 }
-
-
-

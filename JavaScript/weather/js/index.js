@@ -67,6 +67,7 @@ const app = {
       onsuccess: onsuccess
     })
   },
+
   render (resp) {
     let data = resp.weather[0]
     console.log(data)
@@ -74,6 +75,7 @@ const app = {
     const lastUpdate = new Date(data.last_update)
     const today = data.now
     const futureWeathers = data.future.slice(2,9)
+    const suggestion = data.today.suggestion
 
     $('.city .city-name').innerHTML = `${data.city_name}<span class="icon iconfont icon-location"></span>`
     $('.city .data').innerText = `${currentData.toLocaleDateString()} 星期${getDay(currentData.getDay())}`
@@ -83,6 +85,11 @@ const app = {
     $('.today .detail .text').innerText = today.text
     $('.today .detail .wind').innerText = `${today.wind_direction}风${today.wind_scale}级`
     $('.today .detail .humidity').innerText = `湿度：${today.humidity}%`
+
+    // 建议
+    $('.suggestion .car_washing .dropdown').innerText = suggestion.car_washing.details
+    $('.suggestion .dressing .dropdown').innerText = suggestion.dressing.details
+    $('.suggestion .uv .dropdown').innerText = suggestion.uv.details
 
     // 未来7天
     let future = '<div class="title">未来7天的天气</div>'
