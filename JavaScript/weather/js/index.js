@@ -70,11 +70,10 @@ const app = {
 
   render (resp) {
     let data = resp.weather[0]
-    console.log(data)
     const currentData = new Date()
     const lastUpdate = new Date(data.last_update)
     const today = data.now
-    const futureWeathers = data.future.slice(2,9)
+    const futureWeathers = data.future.slice(1,8)
     const suggestion = data.today.suggestion
 
     $('.city .city-name').innerHTML = `${data.city_name}<span class="icon iconfont icon-location"></span>`
