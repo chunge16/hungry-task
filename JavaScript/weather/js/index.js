@@ -79,7 +79,7 @@ const app = {
 
     $('.city .city-name').innerHTML = `${data.city_name}<span class="icon iconfont icon-location"></span>`
     $('.city .data').innerText = `${currentData.toLocaleDateString()} 星期${getDay(currentData.getDay())}`
-    $('.city .last_update').innerHTML = `<span class="icon iconfont icon-shijian"></span>${lastUpdate.getHours()}:${formantMinutes(lastUpdate.getMinutes())}`
+    $('.city .last_update').innerHTML = `<span class="icon iconfont icon-gengxin"></span>${lastUpdate.getHours()}:${formantMinutes(lastUpdate.getMinutes())}`
     $('.today > img').src = getCodeImg(today.code)
     $('.today .temperature').innerText = `${today.temperature}℃`
     $('.today .detail .text').innerText = today.text

@@ -155,9 +155,6 @@ body * {
 .weather .future .future-day:hover {
     background-color: rgba(255,255,255,0.05)
 }
-.weather .future .future-day {
-    transition: background-color ease-in-out .3s;
-}
 .weather .future .title {
     padding: 15px 0;
     width: 100%;
@@ -165,10 +162,17 @@ body * {
     font-size: 20px;
 }
 .weather .future .future-day {
+    margin: 20px 0;
     flex: 1;
     height: 240px;
     text-align: center;
     color: #cbcbcb;
+    transition: background-color ease-in-out .3s;
+    border-right: 1px solid #e8e8e8;
+}
+
+.weather .future .future-day:last-child {
+    border-right: none;
 }
 
 .future .future-day .data {
@@ -207,4 +211,15 @@ body * {
     height: 20px;
     line-height: 20px;
     font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .current .suggestion {
+        display: none;
+    }
+    .weather .future .future-day {
+        width: 50%;
+        flex: none;
+        border-right: 1px solid #e8e8e8;
+    }
 }
