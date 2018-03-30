@@ -222,4 +222,10 @@ body * {
         flex: none;
         border-right: 1px solid #e8e8e8;
     }
+    .weather .future .future-day:nth-child(add){
+        border-right: none;
+    }
+    .weather .future .future-day:last-child {
+        border-right: 1px solid #e8e8e8;
+    }
 }
