@@ -220,9 +220,8 @@ body * {
     .weather .future .future-day {
         width: 50%;
         flex: none;
-        border-right: 1px solid #e8e8e8;
     }
-    .weather .future .future-day:nth-child(add){
+    .weather .future .future-day:nth-child(odd){
         border-right: none;
     }
     .weather .future .future-day:last-child {
