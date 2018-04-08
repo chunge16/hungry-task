@@ -46,6 +46,18 @@ body * {
     text-align: center;
     border-radius: 28px;
 }
+.current .city .currentCity {
+    display: inline-block;
+    width: 60px;
+    padding: 0 8px;
+    color: #eee;
+    -webkit-appearance: none;
+    border: solid 1px #e8e8e8;
+    cursor: pointer;
+    background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;
+    outline: none;
+    font-size: 14px;
+}
 .current .today {
     position: absolute;
     top: 50%;

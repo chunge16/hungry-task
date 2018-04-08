@@ -7,7 +7,7 @@ function ajax (opts) {
   let data = opts.data || {}
 
   let dataStr = []
-  for(var key in data){
+  for(let key in data){
     dataStr.push(key + '=' + data[key])
   }
   dataStr = dataStr.join('&')
@@ -19,7 +19,7 @@ function ajax (opts) {
   let xhr = new XMLHttpRequest()
   xhr.open(type, url, true)
   xhr.onload = function(){
-    if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
+    if((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304){
       //成功了
       if(dataType === 'json'){
         onsuccess( JSON.parse(xhr.responseText))
@@ -60,11 +60,12 @@ function getCodeImg(code) {
 }
 
 const app = {
-  getData (onsuccess) {
+  getData (onsuccess, data) {
     ajax({
-      type: 'get',
-      url: 'https://weixin.jirengu.com/weather',
-      onsuccess: onsuccess
+      type: 'GET',
+      url: `https://weixin.jirengu.com/weather`,
+      onsuccess: onsuccess,
+      data: data
     })
   },
 
@@ -116,17 +117,24 @@ const app = {
     $('.future').innerHTML = future
   },
 
-  bind () {
-
+  init () {
+    this.getData((data) => {this.render(data)}, {key: 'study_javascript_in_jirengu.com'})
   },
 
-  init () {
-    this.getData((data) => {
-      this.render(data)
-      this.bind()
+  triggerCity (city) {
+    this.getData((data) => {this.render(data)}, {
+      key: 'study_javascript_in_jirengu.com',
+      location: city
     })
   }
 }
-
+const currentCity = $('.currentCity')
+currentCity.addEventListener('change', function (e) {
+  let city = e.target.value
+  app.triggerCity(city)
+})
 
 app.init()
+
+
+
