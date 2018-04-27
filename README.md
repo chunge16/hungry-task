@@ -39,7 +39,7 @@
 一个简易的天气应用
 
 ```
-npm install npm-get-weather
+npm install -g npm-get-weather
 
 weather [city]
 
@@ -48,7 +48,7 @@ Hi, this is weather report app
 ```
 
 **关键词**：
-`npm` `Promise` `模块化` 等
+`npm` `Promise` `模块化` `node`等
 
 **项目预览**： [npm-get-weather](https://www.npmjs.com/package/npm-get-weather)
 

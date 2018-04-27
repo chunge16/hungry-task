@@ -23,7 +23,7 @@ getWeather().then(function (data) {
   console.log("当前城市： ", data.weather[0].city_name)
   console.log("当前天气： ", data.weather[0].now.text)
   console.log("当前温度： ", `${data.weather[0].now.temperature}℃`)
-  console.log("当前湿度： ", data.weather[0].now.humidity)
+  console.log("当前湿度： ", `${data.weather[0].now.humidity}%`)
   console.log("出行建议： ", data.weather[0].today.suggestion.travel.details)
 })
 
