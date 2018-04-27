@@ -16,14 +16,15 @@ $ npm install -g npm-get-weather
 获取当前本地天气
 
 ```bash
-$ npm-get-weather
+$ weather
 ```
 
 获取指定城市天气
 
 ```bash
-$ npm-get-weather city
+$ weather city
+```
 
 ```bash
-$ npm-get-weather 北京
+$ weather 北京
 ```
