@@ -93,7 +93,18 @@ const app = {
 
     // 未来7天
     let future = '<div class="title">未来7天的天气</div>'
+    let xAxisLabel = []
+    let highStemperature = []
+    let lowStemperature = []
     futureWeathers.forEach((day) => {
+      if (highStemperature.length > 7 && lowStemperature.length > 7){
+        highStemperature = []
+        lowStemperature = []
+        xAxisLabel = []
+      }
+      xAxisLabel.push(day.day)
+      highStemperature.push(day.high)
+      lowStemperature.push(day.low)
       future += `
       <div class="future-day">
                 <div class="data">${day.date}</div>
@@ -115,10 +126,98 @@ const app = {
       `
     })
     $('.future').innerHTML = future
+
+    // 未来7天走势图
+    let myChart = echarts.init(document.getElementById('main'))
+    let option = {
+      title: {
+        text: '未来一周气温变化',
+        left: 'center'
+      },
+      grid: {
+        top:'30%',
+        left: '3%',
+        right: '4%',
+        containLabel: true
+      },
+      tooltip: {
+        trigger: 'axis'
+      },
+      legend: {
+        data:['最高气温','最低气温'],
+        top: 40
+      },
+      xAxis:  {
+        type: 'category',
+        boundaryGap: false,
+        data: xAxisLabel,
+        axisLabel: {
+          color: '#fff'
+        },
+      },
+      yAxis: {
+        type: 'value',
+        axisLabel: {
+          formatter: '{value} °C',
+          color: '#fff'
+        },
+        min: function (value) {
+          return value.min - 5
+        }
+      },
+      series: [
+        {
+          name:'最高气温',
+          type:'line',
+          data:highStemperature,
+          markPoint: {
+            data: [
+              {type: 'max', name: '最大值'},
+              {type: 'min', name: '最小值'}
+            ]
+          },
+          markLine: {
+            data: [
+              {type: 'average', name: '平均值'}
+            ]
+          },
+          label: {
+            normal: {
+              show: true,
+              position: 'top'
+            }
+          }
+        },
+        {
+          name:'最低气温',
+          type:'line',
+          data:lowStemperature,
+          markPoint: {
+            data: [
+              {type: 'max', name: '最大值'},
+              {type: 'min', name: '最小值'}
+            ]
+          },
+          markLine: {
+            data: [
+              {type: 'average', name: '平均值'}
+            ]
+          },
+          label: {
+            normal: {
+              show: true,
+              position: 'top'
+            }
+          }
+        }
+      ]
+    }
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option)
   },
 
   init () {
-    this.getData((data) => {this.render(data)}, {key: 'study_javascript_in_jirengu.com'})
+    this.getData(data => {this.render(data)}, {key: 'study_javascript_in_jirengu.com'})
   },
 
   triggerCity (city) {
@@ -128,6 +227,8 @@ const app = {
     })
   }
 }
+
+
 const currentCity = $('.currentCity')
 currentCity.addEventListener('change', function (e) {
   let city = e.target.value

@@ -36,7 +36,7 @@
 
 **项目说明**：
 
-一个简易的天气应用
+简易查询天气的命令行工具
 
 ```
 npm install -g npm-get-weather
