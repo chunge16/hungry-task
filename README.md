@@ -19,8 +19,13 @@
 
 #### 项目预览
 
+#####  常见的JS组件
 
-##### 1、weather
+- [lazyimg](http://chunge2016.online/hungry-task/JavaScript/lazyimg/)
+- [tabs](http://chunge2016.online/hungry-task/JavaScript/js-component-tab/)
+
+
+##### weather
 
 **项目说明**：
 
@@ -32,7 +37,7 @@
 **项目预览**： [weather](http://chunge2016.online/hungry-task/JavaScript/weather/)
 
 
-##### 2、npm-get-weather
+##### npm-get-weather
 
 **项目说明**：
 
