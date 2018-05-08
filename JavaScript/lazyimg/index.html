@@ -59,7 +59,8 @@
   function checkShow(imgNode) {
     if (!imgNode) return false
     let clientRect = imgNode.getBoundingClientRect()
-    let isShow  = clientRect.top >= 0 && clientRect.left >= 0 && clientRect.bottom <= window.innerHeight && clientRect.right <= window.innerWidth
+    let windowHeight = document.documentElement.clientHeight
+    let isShow = clientRect.top < windowHeight
     return isShow
   }
   function lazyRender() {

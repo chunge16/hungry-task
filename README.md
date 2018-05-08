@@ -1,6 +1,6 @@
 # hungry-task
 
-----
+---
 
 ### HTML/CSS
 
@@ -17,15 +17,16 @@
 
 ----
 
-#### 项目预览
+### 项目预览
 
-#####  常见的JS组件
+#### 常见的组件
 
 - [lazyimg](http://chunge2016.online/hungry-task/JavaScript/lazyimg/)
 - [tabs](http://chunge2016.online/hungry-task/JavaScript/js-component-tab/)
 
+---
 
-##### weather
+#### weather
 
 **项目说明**：
 
@@ -36,8 +37,9 @@
 
 **项目预览**： [weather](http://chunge2016.online/hungry-task/JavaScript/weather/)
 
+---
 
-##### npm-get-weather
+#### npm-get-weather
 
 **项目说明**：
 
