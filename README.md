@@ -23,6 +23,7 @@
 
 - [lazyimg](http://chunge2016.online/hungry-task/JavaScript/lazyimg/)
 - [tabs](http://chunge2016.online/hungry-task/JavaScript/js-component-tab/)
+- [waterfall-sinanews](http://chunge2016.online/hungry-task/JavaScript/waterfall-sinanews/)
 
 ---
 
