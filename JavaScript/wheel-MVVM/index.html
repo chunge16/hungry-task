@@ -13,6 +13,8 @@
   <input type="text" v-model="name">
   <p>{{name}}</p>
   <button v-on:click="sayHi"> sayHi </button>
+  <br>
+  <button v-on:click="toggleShowName"> toggle </button>
   <script src="js/observer.js"></script>
   <script src="js/watcher.js"></script>
   <script src="js/compile.js"></script>
@@ -27,6 +29,9 @@
       methods: {
         sayHi() {
           alert('Hi, Dear')
+        },
+        toggleShowName() {
+          this.isShow = !this.isShow
         }
       }
     })
