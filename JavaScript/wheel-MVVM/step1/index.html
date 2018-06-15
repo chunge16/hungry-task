@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MVVM-step1</title>
+</head>
+<body>
+<script>
+  // 数据劫持： 现在我们利用Object.defineProperty这个方法动态监听数据
+
+  let data = {
+    friends: [1, 2, 3],
+    data: {
+      name: 'hunger',
+      age: 12,
+      sex: 'boy'
+    }
+  }
+
+
+  observe(data)
+
+  function observe (data) {
+    if (!data || typeof data !== 'object') return
+
+    let keys = Object.keys(data)
+    keys.forEach(key => {
+      let val = data[key]
+      Object.defineProperty(data, key, {
+        enumerable: true,
+        configurable: true,
+        set (newVal) {
+          console.log(`changes happen: ${val} => ${newVal}`)
+          return newVal
+        },
+        get () {
+          console.log(`get ${val}`)
+          return val
+        }
+      })
+      if(typeof val === 'object'){
+        observe(val)
+      }
+    })
+  }
+</script>
+</body>
+</html>

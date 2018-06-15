@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MVVM-step2</title>
+</head>
+<body>
+<script>
+  // 发布订阅设计模式
+  class Subject {
+    constructor () {
+      this.observers = []
+    }
+    addObserver(observer) {
+      this.observers.push(observer)
+    }
+    removeObserver(observer) {
+      var index = this.observers.indexOf(observer)
+      if(index > -1){
+        this.observers.splice(index, 1)
+      }
+    }
+    notify() {
+      this.observers.forEach(observer=> {
+        observer.update()
+      })
+    }
+  }
+
+  class Observer{
+    constructor(name) {
+      this.name = name
+      this.update = function() {
+        console.log(name + ' update...')
+      }
+    }
+    subscribeTo(subject) {
+      subject.addObserver(this)
+    }
+  }
+
+  let subject = new Subject()
+  let observer1 = new Observer('observer1')
+  let observer2 = new Observer('observer2')
+  let observer3 = new Observer('observer3')
+
+  observer1.subscribeTo(subject)
+  observer2.subscribeTo(subject)
+  observer3.subscribeTo(subject)
+
+</script>
+</body>
+</html>
