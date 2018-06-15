@@ -72,5 +72,5 @@ Hi, this is weather report app
 **关键词**：
 `JavaScript` `MVVM` `DOM`
 
-**项目预览**： [weather](http://chunge2016.online/hungry-task/JavaScript/wheel-MVVM/)
+**项目预览**： [wheel-MVVM](http://chunge2016.online/hungry-task/JavaScript/wheel-MVVM/)
 

@@ -48,4 +48,4 @@
 
 #### 效果预览
 
-[sample]()
+[sample](http://chunge2016.online/hungry-task/JavaScript/wheel-MVVM/)
