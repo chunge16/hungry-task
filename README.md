@@ -60,3 +60,17 @@ Hi, this is weather report app
 
 **项目预览**： [npm-get-weather](https://www.npmjs.com/package/npm-get-weather)
 
+
+---
+
+#### wheel-MVVM
+
+**项目说明**：
+
+实现一个 微型的MVVM 框架，主要包括指令、单向和双向数据绑定
+
+**关键词**：
+`JavaScript` `MVVM` `DOM`
+
+**项目预览**： [weather](http://chunge2016.online/hungry-task/JavaScript/wheel-MVVM/)
+
