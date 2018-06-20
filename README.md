@@ -74,3 +74,14 @@ Hi, this is weather report app
 
 **项目预览**： [wheel-MVVM](http://chunge2016.online/hungry-task/JavaScript/wheel-MVVM/)
 
+---
+#### node-server
+
+**项目说明**：
+
+实现一个简易可扩展能处理路由解析和支持静态目录的 server
+
+**关键词**：
+`JavaScript` `Node` `服务器搭建`
+
+**项目预览**： [代码地址](https://github.com/chunge16/hungry-task/tree/master/JavaScript/node-server)
