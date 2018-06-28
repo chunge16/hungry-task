@@ -47,6 +47,11 @@ window.onload = function () {
 
     audioObject.addEventListener('playing', function () {
       console.log('playing')
+      if (!picture.classList.contains('animate')) {
+        picture.classList.add('animate')
+      }
+      document.removeEventListener('touchstart', forceSafariPlayAudio, false)
+      document.removeEventListener('click', forceSafariPlayAudio, false)
     })
     audioObject.addEventListener('pause', function(){
       console.log('pause')
@@ -86,12 +91,12 @@ window.onload = function () {
       }
     })
 
-    nextSongBtn.addEventListener('touchend', function () {
+    nextSongBtn.addEventListener('click', function () {
       audioObject.getmusic(this.channelID)
       getCover(audioObject)
     })
 
-    cover.addEventListener('touchend', function () {
+    cover.addEventListener('click', function () {
       console.log('cover')
       if (audioObject.paused) {
         audioObject.play()
@@ -101,7 +106,7 @@ window.onload = function () {
       getCover(audioObject)
     })
 
-    lyricBtn.addEventListener('touchend', function () {
+    lyricBtn.addEventListener('click', function () {
       console.log('show')
       if (lyricWarp.classList.contains('show')) {
         lyricWarp.classList.remove('show')
@@ -110,7 +115,7 @@ window.onload = function () {
       }
     })
 
-    lyricWarp.addEventListener('touchend', function (e) {
+    lyricWarp.addEventListener('click', function (e) {
       e.stopPropagation()
       if (this.classList.contains('show')) {
         lyricWarp.classList.remove('show')
@@ -118,6 +123,16 @@ window.onload = function () {
     })
     // 初始化播放
     audioObject.getmusic(this.channelID)
+    function forceSafariPlayAudio() {
+      audioObject.load() // iOS 9   还需要额外的 load 一下, 否则直接 play 无效
+      audioObject.play() // iOS 7/8 仅需要 play 一下
+    }
+
+    // 由于 iOS Safari 限制不允许 audio autoplay, 必须用户主动交互(例如 click)后才能播放 audio,
+    // 因此我们通过一个用户交互事件来主动 play 一下 audio.
+    document.addEventListener('touchstart', forceSafariPlayAudio, false)
+    document.addEventListener('click', forceSafariPlayAudio, false)
+
   }
   function getSongDetails (audioObject) {
     picture.setAttribute('src', audioObject.song.picture)
@@ -129,13 +144,15 @@ window.onload = function () {
   }
 
   function getCover (audioObject){
-    if (!audioObject.paused) {
-      if (cover.classList.contains('fm-cover-pause')){
-        cover.classList.remove('fm-cover-pause')
-      }
-    } else {
+    if (audioObject.paused) {
+      pause()
       if (!cover.classList.contains('fm-cover-pause')){
         cover.classList.add('fm-cover-pause')
+      }
+    } else {
+      play()
+      if (cover.classList.contains('fm-cover-pause')){
+        cover.classList.remove('fm-cover-pause')
       }
     }
   }
@@ -171,6 +188,19 @@ window.onload = function () {
     }.bind(audioObject))
   }
 
+  function pause() {
+    let iTransform = getComputedStyle(picture).transform
+    let cTransform = getComputedStyle(cover).transform
+    cover.style.transform = cTransform === 'none'
+      ? iTransform
+      : iTransform.concat(' ', cTransform)
+    picture.classList.remove('animate')
+  }
+
+  function play() {
+    picture.classList.add('animate')
+  }
+
   init()
 }
 
@@ -178,3 +208,5 @@ function $(nodeClass) {
   if (!nodeClass) return null
   return document.querySelector(nodeClass)
 }
+
+

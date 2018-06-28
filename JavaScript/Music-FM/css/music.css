@@ -12,7 +12,7 @@ img{
 .warp {
   position: relative;
   width: 100%;
-  height:100vh;
+  max-height: 100vh;
   box-sizing: border-box;
 }
 .fm-main {
@@ -82,8 +82,8 @@ img{
 .fm-cover {
   position: relative;
   margin: 0 auto;
-  width: 80vw;
-  height: 80vw;
+  width: 55vw;
+  height: 55vw;
   border-radius: 50%;
   overflow: hidden;
   box-shadow: 0 0 4px 4px #e8e8e8
@@ -94,10 +94,9 @@ img{
   position: relative;
   width: 100%;
   height: 100%;
+  border-radius: 50%;
   transform: rotate(360deg);
   -webkit-transform: rotate(360deg);
-  -webkit-animation: change 8s linear infinite ;
-  animation: change 8s linear infinite;
 }
 .fm-cover-shield {
   display: none;
@@ -110,15 +109,12 @@ img{
   z-index: 99;
 }
 
-.fm-cover-pause > img {
-  animation-play-state: paused;
-}
 .fm-cover-pause .fm-cover-shield {
   display: block;
 }
 
 .fm-msg {
-  margin-top: 10%;
+  margin-top: 20px;
   width: 100%;
   text-align: center;
 }
@@ -140,11 +136,11 @@ img{
 
 .fm-msg-lyric {
   color: #8f8e94;
-  margin: 2rem;
+  padding: 20px 0;
   font-size: 14px;
   font-weight: 400;
   line-height: 28px;
-  min-height: 1em;
+  min-height: 1rem;
   -webkit-user-select: text;
   -moz-user-select: text;
   -ms-user-select: text;
@@ -154,10 +150,9 @@ img{
 
 .fm-controls {
   position: fixed;
-  margin-top: 2rem;
-  width: 100%;
   left: 0;
   bottom: 0;
+  width: 100%;
 }
 
 .fm-controls img {
@@ -188,6 +183,17 @@ img{
   height: 35px;
 }
 
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
+.animate {
+  -webkit-animation: change 8s linear infinite ;
+  animation: change 8s linear infinite;
+}
+
 @-webkit-keyframes change
 {
   from {
@@ -196,10 +202,4 @@ img{
   to {
     -webkit-transform:rotate(360deg);
   }
-}
-.show {
-  display: block;
-}
-.hide {
-  display: none;
 }
