@@ -13,7 +13,7 @@
 ### JavaScript
 
 #### 技术栈
-`浏览器渲染机制`、`运算符优先级`、`函数声明`、 `函数表达式`、 `声明前置`、 `作用域链`、 `引用类型`、 `ES5数组`、`IIFE` `对象拷贝`、 `字符串/数组/Math/正则`、 `DOM增删改查`、 `事件模型(冒泡、捕获、事件代理、取消默认)`、 `BOM`、 `闭包`、 `服务器搭建`、 `动画`、 `Ajax(Mock数据)`、 `跨域`、 `jQuery` `DOM操作/属性操作/事件/Ajax`、 `Promise`等
+`浏览器渲染机制`、`运算符优先级`、`函数声明`、 `函数表达式`、 `声明前置`、 `作用域链`、 `引用类型`、 `ES5数组`、`IIFE` `对象拷贝`、 `字符串/数组/Math/正则`、 `DOM增删改查`、 `事件模型(冒泡、捕获、事件代理、取消默认)`、 `BOM`、 `闭包`、 `服务器搭建`、 `动画`、 `Ajax(Mock数据)`、 `跨域`、 `jQuery` `DOM操作/属性操作/事件/Ajax`、 `Promise` `原型`、 `原型链`、 `继承`、 `this`、 `模块模式`、`发布订阅模式`、 `AMD/CMD/UMD规范、 Require.js/R.js`、 `Node入门`、 `NPM使用(开发命令行工具)`、 `工程化(Gulp、NPM Script)`、 `WebPack入门`等
 
 ----
 
@@ -70,7 +70,7 @@ Hi, this is weather report app
 实现一个 微型的MVVM 框架，主要包括指令、单向和双向数据绑定
 
 **关键词**：
-`JavaScript` `MVVM` `DOM`
+`JavaScript` `MVVM` `DOM`等
 
 **项目预览**： [wheel-MVVM](http://chunge2016.online/hungry-task/JavaScript/wheel-MVVM/)
 
@@ -82,6 +82,18 @@ Hi, this is weather report app
 实现一个简易可扩展能处理路由解析和支持静态目录的 server
 
 **关键词**：
-`JavaScript` `Node` `服务器搭建`
+`JavaScript` `Node` `服务器搭建`等
 
 **项目预览**： [代码地址](https://github.com/chunge16/hungry-task/tree/master/JavaScript/node-server)
+
+---
+#### Music-FM
+
+**项目说明**：
+
+实现一个播放随机音乐的FM播放器
+
+**关键词**：
+`JavaScript` `DOM` `ajax`等
+
+**项目预览**： [Music](http://chunge2016.online/hungry-task/JavaScript/Music-FM/)
