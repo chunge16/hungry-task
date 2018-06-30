@@ -1,6 +1,5 @@
-# hungry-task
+## hungry-task
 
----
 
 ### HTML/CSS
 
@@ -33,8 +32,7 @@
 
 通过Ajax获取当地或选择其他城市的天气预报网站
 
-**关键词**：
-`Ajax` `jQuery` `DOM` `CSS` `布局`等
+**关键词**： `Ajax` `jQuery` `DOM` `CSS` `布局`等
 
 **项目预览**： [weather](http://chunge2016.online/hungry-task/JavaScript/weather/)
 
@@ -42,9 +40,7 @@
 
 #### npm-get-weather
 
-**项目说明**：
-
-简易查询天气的命令行工具
+**项目说明：**基于`Node`的查询天气的命令行工具，可以通过命令行来查询当地或其他城市的天气。发布一个Node包首先注册npm账号，然后新建项目通过登录npm账号publish该项目即可，通过修改package.json，加入 bin 字段，即可开发命令行工具。
 
 ```
 npm install -g npm-get-weather
@@ -55,8 +51,7 @@ Hi, this is weather report app
 
 ```
 
-**关键词**：
-`npm` `Promise` `模块化` `node`等
+**关键词**： `npm` `Promise` `模块化` `node`等
 
 **项目预览**： [npm-get-weather](https://www.npmjs.com/package/npm-get-weather)
 
@@ -65,35 +60,28 @@ Hi, this is weather report app
 
 #### wheel-MVVM
 
-**项目说明**：
+**项目说明**：实现一个 微型的MVVM 框架，主要包括指令、单向和双向数据绑定。主要核心原理是两部分：数据监控和模板解析。通过Object.defineProperty实现对data数据的监听，而初始化View时涉及该数据的模板或指令进行解析处理；这里还涉及到观察者模式，主题（Subject）可以看做是Model里的数据，而观察者（Observer）就是View用到该数据的指令或模板，当数据一旦改变时就会通知所有订阅者更新。
 
-实现一个 微型的MVVM 框架，主要包括指令、单向和双向数据绑定
 
-**关键词**：
-`JavaScript` `MVVM` `DOM`等
+**关键词**：`JavaScript` `MVVM` `DOM`等
 
 **项目预览**： [wheel-MVVM](http://chunge2016.online/hungry-task/JavaScript/wheel-MVVM/)
 
 ---
 #### node-server
 
-**项目说明**：
+**项目说明**：实现一个简易可扩展能处理路由解析和支持静态目录的 server。基本原理是基于Node的http模块创建HTTP服务器，根据http请求里的信息来进行相应的处理，例如URL的path信息来处路由解析等问题。
 
-实现一个简易可扩展能处理路由解析和支持静态目录的 server
+**关键词**：`JavaScript` `Node` `服务器搭建` `HTTP`等
 
-**关键词**：
-`JavaScript` `Node` `服务器搭建`等
-
-**项目预览**： [代码地址](https://github.com/chunge16/hungry-task/tree/master/JavaScript/node-server)
+**查看源码**： [node-server](https://github.com/chunge16/hungry-task/tree/master/JavaScript/node-server)
 
 ---
 #### Music-FM
 
-**项目说明**：
 
-实现一个播放随机音乐的FM播放器
+**项目说明**：实现一个播放音乐的FM播放器。首先使用Audio对象自身的需要API来处理需要相应的处理逻辑，其次通过请求第三方线上音乐接口API来获取数据，最后通过相应的静态页面来实现整体播放器的交互逻辑。
 
-**关键词**：
-`JavaScript` `DOM` `ajax`等
+**关键词**：`JavaScript` `DOM` `Ajax` `CSS3`等
 
 **项目预览**： [Music](http://chunge2016.online/hungry-task/JavaScript/Music-FM/)
