@@ -5,6 +5,7 @@ window.onload = function () {
     GETLYRIC: 'http://api.jirengu.com/fm/getLyric.php'
   }
   const cover = $('.fm-cover')
+  const coverWarp = $('.fm-cover-warp')
   const picture = $('.fm-cover > img')
   const title = $('.fm-msg-title')
   const artist = $('.fm-msg-singer')
@@ -13,7 +14,7 @@ window.onload = function () {
   const lyricWarp = $('.lyricOuter')
   const lyricList = $('.show-lrc')
   const lyricBtn = $('.lyric-btn')
-  let curIndex = -30
+  let curIndex = 0
 
   function init() {
     let audioObject = new Audio()
@@ -26,7 +27,6 @@ window.onload = function () {
         }
       })
         .then(function (response) {
-          console.log(response.data)
           let song = response.data.song[0]
           this.song = {
             picture: song.picture,
@@ -38,72 +38,83 @@ window.onload = function () {
           this.src = song.url
           getSongDetails(audioObject)
           getLyric(audioObject)
-          this.play()
         }.bind(this))
         .catch(function (error) {
           console.error(error)
         })
     }
 
+    audioObject.addEventListener('canplay', function () {
+      this.play()
+    })
+
     audioObject.addEventListener('playing', function () {
       console.log('playing')
-      if (!picture.classList.contains('animate')) {
-        picture.classList.add('animate')
+      play()
+      if (coverWarp.classList.contains('fm-cover-pause')){
+        coverWarp.classList.remove('fm-cover-pause')
       }
       document.removeEventListener('touchstart', forceSafariPlayAudio, false)
       document.removeEventListener('click', forceSafariPlayAudio, false)
     })
+
     audioObject.addEventListener('pause', function(){
       console.log('pause')
+      pause()
+      if (!coverWarp.classList.contains('fm-cover-pause')){
+        coverWarp.classList.add('fm-cover-pause')
+      }
     })
     audioObject.addEventListener('ended', function(){
       console.log('ended')
       this.getmusic(this.channelID)
     })
+
     audioObject.addEventListener('timeupdate', function () {
       //如下代码设置 每1秒左右执行一次
       if(this.shouldUpdate) {
         //do something
         let minute = Math.floor(this.currentTime / 60)
-        let seconed = Math.round(this.currentTime % 60) + ''
+        let seconed = Math.floor(this.currentTime % 60) + ''
         seconed = seconed.length === 2 ? seconed: '0' + seconed
         let time = `0${minute}:${seconed}`
-
         lyricList.childNodes.forEach(function (item, index) {
+
           if (item.getAttribute('data-time') === time) {
-            item.classList.add('active')
-            curIndex -= 30
-            lyricList.style.marginTop = curIndex + 'px'
             if (index > 0) {
               lyricList.childNodes[index - 1].classList.remove('active')
             }
+            item.classList.add('active')
+            curIndex -= 30
+            lyricList.style.marginTop = curIndex + 'px'
           }
         })
 
-        let line = this.lyricObj[time]
-        if (line) {
-          lyric.innerText = line
+        if (this.lyricObj) {
+          let line = this.lyricObj[time]
+          if (line) {
+            lyric.innerText = line
+          }
         }
         this.shouldUpdate = false
         setTimeout(function(){
           this.shouldUpdate = true
-        }.bind(this), 800)
+        }.bind(this), 1000)
       }
     })
 
     nextSongBtn.addEventListener('click', function () {
       audioObject.getmusic(this.channelID)
-      getCover(audioObject)
     })
 
-    cover.addEventListener('click', function () {
+    coverWarp.addEventListener('click', function (e) {
+      e.stopPropagation()
       console.log('cover')
       if (audioObject.paused) {
         audioObject.play()
       } else {
         audioObject.pause()
       }
-      getCover(audioObject)
     })
 
     lyricBtn.addEventListener('click', function () {
@@ -143,19 +154,6 @@ window.onload = function () {
     }
   }
 
-  function getCover (audioObject){
-    if (audioObject.paused) {
-      pause()
-      if (!cover.classList.contains('fm-cover-pause')){
-        cover.classList.add('fm-cover-pause')
-      }
-    } else {
-      play()
-      if (cover.classList.contains('fm-cover-pause')){
-        cover.classList.remove('fm-cover-pause')
-      }
-    }
-  }
 
   function getLyric (audioObject) {
     if (lyricList.innerHTML) {
@@ -184,7 +182,6 @@ window.onload = function () {
         }
       })
       audioObject.lyricObj = lyricObj
-      console.log(audioObject.lyricObj)
     }.bind(audioObject))
   }
 
