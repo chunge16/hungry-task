@@ -40,7 +40,7 @@
 
 #### npm-get-weather
 
-**项目说明：**基于`Node`的查询天气的命令行工具，可以通过命令行来查询当地或其他城市的天气。发布一个Node包首先注册npm账号，然后新建项目通过登录npm账号publish该项目即可，通过修改package.json，加入 bin 字段，即可开发命令行工具。
+**项目说明**：  基于`Node`的查询天气的命令行工具，可以通过命令行来查询当地或其他城市的天气。发布一个Node包首先注册npm账号，然后新建项目通过登录npm账号publish该项目即可，通过修改package.json，加入 bin 字段，即可开发命令行工具。
 
 ```
 npm install -g npm-get-weather
