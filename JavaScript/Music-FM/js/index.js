@@ -38,6 +38,7 @@ window.onload = function () {
           this.src = song.url
           getSongDetails(audioObject)
           getLyric(audioObject)
+          this.play()
         }.bind(this))
         .catch(function (error) {
           console.error(error)
@@ -45,6 +46,7 @@ window.onload = function () {
     }
 
     audioObject.addEventListener('canplay', function () {
+      console.log('canplay')
       this.play()
     })
 
