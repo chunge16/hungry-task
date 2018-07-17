@@ -65,7 +65,7 @@ window.onload = function () {
       this.getmusic(this.channelID)
     })
 
-    audioObject.addEventListener('click', function () {
+    audioObject.addEventListener('timeupdate', function () {
       //如下代码设置 每1秒左右执行一次
       if(this.shouldUpdate) {
         //do something
