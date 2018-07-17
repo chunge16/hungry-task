@@ -38,17 +38,11 @@ window.onload = function () {
           this.src = song.url
           getSongDetails(audioObject)
           getLyric(audioObject)
-          this.play()
         }.bind(this))
         .catch(function (error) {
           console.error(error)
         })
     }
-
-    audioObject.addEventListener('canplay', function () {
-      console.log('canplay')
-      this.play()
-    })
 
     audioObject.addEventListener('playing', function () {
       console.log('playing')
@@ -56,8 +50,6 @@ window.onload = function () {
       if (coverWarp.classList.contains('fm-cover-pause')){
         coverWarp.classList.remove('fm-cover-pause')
       }
-      document.removeEventListener('touchstart', forceSafariPlayAudio, false)
-      document.removeEventListener('click', forceSafariPlayAudio, false)
     })
 
     audioObject.addEventListener('pause', function(){
@@ -67,12 +59,13 @@ window.onload = function () {
         coverWarp.classList.add('fm-cover-pause')
       }
     })
+
     audioObject.addEventListener('ended', function(){
       console.log('ended')
       this.getmusic(this.channelID)
     })
 
-    audioObject.addEventListener('timeupdate', function () {
+    audioObject.addEventListener('click', function () {
       //如下代码设置 每1秒左右执行一次
       if(this.shouldUpdate) {
         //do something
@@ -106,6 +99,9 @@ window.onload = function () {
     })
 
     nextSongBtn.addEventListener('click', function () {
+      if (!audioObject.autoplay) {
+        audioObject.autoplay = true
+      }
       audioObject.getmusic(this.channelID)
     })
 
@@ -136,17 +132,8 @@ window.onload = function () {
     })
     // 初始化播放
     audioObject.getmusic(this.channelID)
-    function forceSafariPlayAudio() {
-      audioObject.load() // iOS 9   还需要额外的 load 一下, 否则直接 play 无效
-      audioObject.play() // iOS 7/8 仅需要 play 一下
-    }
-
-    // 由于 iOS Safari 限制不允许 audio autoplay, 必须用户主动交互(例如 click)后才能播放 audio,
-    // 因此我们通过一个用户交互事件来主动 play 一下 audio.
-    document.addEventListener('touchstart', forceSafariPlayAudio, false)
-    document.addEventListener('click', forceSafariPlayAudio, false)
-
   }
+
   function getSongDetails (audioObject) {
     picture.setAttribute('src', audioObject.song.picture)
     title.innerText = audioObject.song.title
@@ -155,7 +142,6 @@ window.onload = function () {
       cover.classList.remove('fm-cover-pause')
     }
   }
-
 
   function getLyric (audioObject) {
     if (lyricList.innerHTML) {
