@@ -1,0 +1,31 @@
+<!--pages/menu/menu.wxml-->
+<view class='container'>
+  <image class='bg' src="../../static/img/bg.jpg" />
+  <view class='section menu-header'>
+
+    <open-data class='userinfo-name' type="userNickName"></open-data>
+    <open-data class='userinfo-avatar' type="userAvatarUrl"></open-data>
+
+  </view>
+  <view class='section'>
+    <input maxlength='7' placeholder='请输入菜名' class='input-menu' value='{{name}}' bindinput="bindKeyInput" />
+  </view>
+  <view class='section'>
+    <button type="primary" class='btn-add' bindtap='addMenu'>添加</button>
+  </view>
+  <view class='section'>
+    <button class='btn-reset' bindtap='resetMenu'>重置菜单</button>
+  </view>
+  <view class='section meun-list'>
+    <text class='meun-list-titel'>菜单列表</text>
+    <view class='meun-list-content'>
+      <view class='meun-list-item' wx:for="{{list}}">
+        <text>{{item}}</text>
+        <view class='item-right'>
+          <!-- <switch bindchange="switch2Change" /> -->
+          <button size='mini' type='warn' bindtap='delMenu' data-name='{{item}}'>删除</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

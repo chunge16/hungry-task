@@ -1,0 +1,51 @@
+/* pages/home/home.wxss */
+
+.container {
+  display: flex;
+  position: relative;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.title {
+  padding: 40rpx 0 60rpx 0;
+  font-size: 64rpx;
+}
+
+.dishes {
+  font-weight: bold;
+}
+
+.btn-ok {
+  width: 400rpx;
+  border-radius: 60rpx;
+}
+
+.menu {
+  position: absolute;
+  bottom: 200rpx;
+  right: 40rpx;
+  padding: 10rpx;
+  width: 60rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  color: #fff;
+  border-radius: 50%;
+  background-color: rgba(52, 58, 64, 0.8);
+}
+
+.menu:active {
+  background-color: #b5b5b5;
+}
+
+.bg {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  box-sizing: border-box;
+  z-index: -1;
+}
