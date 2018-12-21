@@ -19,9 +19,9 @@
   <view class='section meun-list'>
     <text class='meun-list-titel'>菜单列表</text>
     <view class='meun-list-content'>
-      <view class='meun-list-item' wx:for="{{list}}">
-        <text>{{item}}</text>
-        <view class='item-right'>
+      <view class='meun-list-item' wx:for="{{menu.data}}" wx:key="{{item}}">
+        <text class='item-name ellipsis'>{{item}}</text>
+        <view class='item-btn'>
           <!-- <switch bindchange="switch2Change" /> -->
           <button size='mini' type='warn' bindtap='delMenu' data-name='{{item}}'>删除</button>
         </view>

@@ -30,7 +30,7 @@ window.onload = function () {
     }
   }
 
-  var tab = new Tab(document.querySelector('.wrap'))
+  let tab = new Tab(document.querySelector('.wrap'))
   tab.init()
   tab.bind()
 }

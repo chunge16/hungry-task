@@ -30,3 +30,8 @@
 .icon-location::before {
   content: '\e61b'
 }
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

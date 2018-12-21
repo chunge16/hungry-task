@@ -1,19 +1,21 @@
 <!--pages/home/home.wxml-->
 <view class='container'>
   <image class='bg' src="../../static/img/bg.jpg" />
-  <view>
+  <view style='width: 100%'>
     <view class='title'>您今天吃
-      <text class='dishes'>{{dishes}}</text>
-      <text>{{dishes === '神马' ? '?' : '!'}}</text>
+      <view class='dishes ellipsis'>{{dishes}}</view>
+      <view>{{runing ? '?' : '!'}}</view>
     </view>
-    <button class='btn-ok' type='primary' bindtap='changeEat'>{{btnText}}</button>
+    <button class='btn-ok' type='primary' bindtap='handleRandom'>{{btnText}}</button>
+
+    <view class='restaurant-location' hidden='{{!((index > -1) && !runing && (markers.length > 0))}}'>
+      <text bindtap='openLocation'>查看餐厅位置</text>
+    </view>
   </view>
-  <navigator url="../menu/menu" hover-class="navigator-hover">
-    <view class='menu'>
-      <icon class='iconfont icon-menu'></icon>
-    </view>
-  </navigator>
-  <!-- <view class='location'>
+  <view class='menu' bindtap='navigateToMenu'>
+    <icon class='iconfont icon-menu'></icon>
+  </view>
+  <view class='location' bindtap='onTapLocation'>
     <icon class='iconfont icon-location'></icon>
-  </view> -->
-</view>
+  </view>
+</view>                 

@@ -74,7 +74,10 @@
   padding: 30rpx 0;
   border-bottom: 1px solid #e8e8e8;
 }
-.item-right {
+.item-name {
+  width: 70%;
+}
+.item-btn {
   display: flex;
   justify-content: space-around;
   align-items: center;

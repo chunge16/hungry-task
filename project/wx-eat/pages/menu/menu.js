@@ -1,4 +1,7 @@
 // pages/menu/menu.js
+const appInstance = getApp()
+
+
 Page({
 
   /**
@@ -6,31 +9,30 @@ Page({
    */
   data: {
     name: '',
-    list: []
+    menu: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    this.setData({
+      menu: appInstance.globalData.menu
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
-    let menu = wx.getStorageSync('menu') || []
-    this.setData({
-      list: menu
-    })
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    
   },
 
   /**
@@ -70,7 +72,7 @@ Page({
 
   // 添加菜名
   addMenu: function() {
-    let menu = wx.getStorageSync('menu')
+    let menu = appInstance.globalData.menu
     let name = this.data.name
     if (!name) return wx.showToast({
       title: '菜名不能为空',
@@ -78,18 +80,17 @@ Page({
     })
 
     // 检查菜单是否已有该菜名
-    if (menu.indexOf(name) !== -1) {
+    if (menu.data.indexOf(name) !== -1) {
       return wx.showToast({
         title: '这个菜已经有了，这么喜欢它吗',
         icon: 'none'
       })
     }
 
-    menu.push(name)
-    wx.setStorageSync('menu', menu)
+    menu.data.push(name)
     this.setData({
       name: '',
-      list: menu
+      menu
     })
     return wx.showToast({
       title: `${name}`
@@ -98,13 +99,17 @@ Page({
 
   // 重置菜单
   resetMenu: function() {
-    let menu = ['盖浇饭', '兰州拉面', '面条', '砂锅', '水果沙拉']
-    wx.setStorageSync('menu', menu)
+    let defaultMenu = {
+      type: 'default', // 当前共有2种，一种是默认美食，另外一种是定位附近的美食
+      data: ['炒肉', '炖肉', '涮肉']
+    }
     this.setData({
-      list: menu
-    })
-    return wx.showToast({
-      title: '已重置菜单'
+      menu: defaultMenu
+    }, () => {
+      appInstance.globalData.menu = defaultMenu
+      wx.showToast({
+        title: '已重置菜单'
+      })
     })
   },
 
@@ -120,29 +125,23 @@ Page({
     let that = this
     let name = event.currentTarget.dataset.name
     if (!name) return
-    let list = this.data.list
-    console.log('benfore', list)
-    list = list.filter(function(e) {
+    let menu = appInstance.globalData.menu
+    menu.data = menu.data.filter(function(e) {
       return e !== name
     })
-    console.log('anfer', list)
     wx.showModal({
       title: `确认删除${name}?`,
       content: '',
       success(res) {
         if (res.confirm) {
           console.log('用户点击确定')
-          wx.setStorageSync('menu', list)
           that.setData({
-            list
+            menu
           })
         } else if (res.cancel) {
           console.log('用户点击取消')
         }
       }
     })
-
-
-
   }
 })

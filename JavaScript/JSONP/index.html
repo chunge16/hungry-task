@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>JSONP跨域</title>
+</head>
+<body>
+<div class="container">
+    <ul class="news">
+    </ul>
+    <button class="show">show news</button>
+</div>
+
+<script>
+
+  $('.show').addEventListener('click', function(){
+    let script = document.createElement('script');
+    script.src = 'http://127.0.0.1:8080/getNews?callback=appendHtml';
+    document.head.appendChild(script);
+    document.head.removeChild(script);
+  })
+
+  function appendHtml(news){
+    console.log(news)
+  }
+
+  function $(id){
+    return document.querySelector(id);
+  }
+</script>
+</body>
+</html>

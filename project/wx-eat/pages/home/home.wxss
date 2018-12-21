@@ -9,10 +9,13 @@
 
 .title {
   padding: 40rpx 0 60rpx 0;
+  text-align: center;
   font-size: 64rpx;
 }
 
 .dishes {
+  width: 100%;
+  text-align: center;
   font-weight: bold;
 }
 
@@ -24,6 +27,20 @@
 .menu {
   position: absolute;
   bottom: 200rpx;
+  right: 40rpx;
+  padding: 10rpx;
+  width: 60rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  color: #fff;
+  border-radius: 50%;
+  background-color: rgba(52, 58, 64, 0.8);
+}
+
+.location {
+  position: absolute;
+  bottom: 100rpx;
   right: 40rpx;
   padding: 10rpx;
   width: 60rpx;
@@ -48,4 +65,17 @@
   height: 100%;
   box-sizing: border-box;
   z-index: -1;
+}
+
+.restaurant-location {
+  padding-top: 100rpx;
+  font-size: 12px;
+  text-align: center;
+}
+
+.restaurant-location text {
+  display: inline-block;
+  color: #666;
+  padding: 4rpx;
+  border-bottom: 1px dashed #999
 }

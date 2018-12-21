@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        .tabs {
+            margin: 0 auto;
+            display: flex;
+            width: 400px;
+            list-style: none;
+            padding: 0;
+        }
+        .tabs .tab {
+            padding: 4px 8px;
+            flex: 1;
+            text-align: center;
+            border: 1px solid #e8e8e8;
+            border-right: none;
+            cursor: pointer;
+        }
+        .tabs .tab:last-child {
+            border-right: 1px solid #e8e8e8;
+        }
+        .tabs .tab.active {
+            background-color: #4CAF50;
+            color: #fff;
+        }
+        .tabs .tab:active {
+            box-shadow: 0 0 2px 0 #999;
+        }
+        .panels {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+            font-size: 18px;
+            transform: translate(-50%, -50%);
+            border: 1px solid #eee;
+        }
+        .panels .panel {
+            display: none;
+            width: 100%;
+            height: 100%;
+            font-size: 20px;
+            transition: all .3s;
+        }
+        .panels .panel.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <ul class="tabs">
+        <li class="tab active">1</li>
+        <li class="tab">2</li>
+        <li class="tab">3</li>
+        <li class="tab">4</li>
+    </ul>
+    <div class="panels">
+        <div class="panel active">1</div>
+        <div class="panel">2</div>
+        <div class="panel">3</div>
+        <div class="panel">4</div>
+    </div>
+</nav>
+<script>
+    function $(selector) {
+      if (!selector) return null
+      return document.querySelector(selector)
+    }
+    function $$(selector) {
+      if (!selector) return null
+      return document.querySelectorAll(selector)
+    }
+
+    const arrNodes = Array.from($$('.tabs .tab'))
+    $('.tabs').addEventListener('click', function (e) {
+      let tabActiveIndex = arrNodes.indexOf(e.target)
+      this.querySelectorAll('.tab').forEach(function (node) {
+        node.classList.remove('active')
+      })
+      e.target.classList.add('active')
+      $$('.panels .panel').forEach(function (node, index) {
+        if (tabActiveIndex === index){
+          node.classList.add('active')
+        } else {
+          node.classList.remove('active')
+        }
+      })
+    })
+</script>
+</body>
+</html>

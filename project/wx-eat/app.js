@@ -1,17 +1,7 @@
 //app.js
 App({
-  onLaunch: function () {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-
-    // 本地存储菜单
-    let list = ['盖浇饭', '兰州拉面', '面条', '砂锅', '水果沙拉']
-    let menu = wx.getStorageSync('menu') || list
-    wx.setStorageSync('menu', menu)
-
-
+  onLaunch: function() {
+    
     // 登录
     wx.login({
       success: res => {
@@ -40,6 +30,10 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    menu: {
+      type: 'default',  // 当前共有2种，一种是默认美食，另外一种是定位附近的美食
+      data: ['炒肉', '炖肉', '涮肉']
+    }
   }
 })

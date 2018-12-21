@@ -1,6 +1,8 @@
 // pages/home/home.js
 
-const utils = require('../../utils/util.js');
+const utils = require('../../utils/util.js')
+const QQMapWX = require('../../libs/qqmap-wx-jssdk.js')
+const appInstance = getApp()
 let timer = 0
 let runing = false
 Page({
@@ -11,19 +13,20 @@ Page({
   data: {
     dishes: '神马',
     btnText: '开始',
-    book: {
-      'morning': ["早上", "面包 蛋糕 荷包蛋 烧饼 饽饽 油条 馄饨 火腿 面条 小笼包  玉米粥 肉包 山东煎饼 饺子 煎蛋 烧卖 生煎 锅贴 包子 酸奶 苹果 梨 香蕉 皮蛋瘦肉粥 蛋挞 南瓜粥 煎饼 玉米糊 泡面 粥 馒头 燕麦片 水煮蛋 米粉 豆浆 牛奶 花卷 豆腐脑 煎饼果子 小米粥 黑米糕 鸡蛋饼 牛奶布丁 水果沙拉 鸡蛋羹 南瓜馅饼 鸡蛋灌饼 奶香小馒头 汉堡包 披萨 八宝粥 三明治 蛋包饭 豆沙红薯饼 驴肉火烧 粥 粢饭糕 蒸饺 白粥"],
-      'noon': ["中午", "盖浇饭 砂锅 大排档 米线 满汉全席 西餐 麻辣烫 自助餐 炒面 快餐 水果 西北风 馄饨 火锅 烧烤 泡面 速冻水饺 日本料理 涮羊肉 味千拉面 肯德基 面包 扬州炒饭 自助餐 茶餐厅 海底捞 咖啡 比萨 麦当劳 兰州拉面 沙县小吃 烤鱼 海鲜 铁板烧 韩国料理 粥 快餐 萨莉亚 桂林米粉 东南亚菜 甜点 农家菜 川菜 粤菜 湘菜 本帮菜 竹笋烤肉"],
-      'night': ["晚上", "盖浇饭 砂锅 大排档 米线 满汉全席 西餐 麻辣烫 自助餐 炒面 快餐 水果 西北风 馄饨 火锅 烧烤 泡面 速冻水饺 日本料理 涮羊肉 味千拉面 肯德基 面包 扬州炒饭 自助餐 茶餐厅 海底捞 咖啡 比萨 麦当劳 兰州拉面 沙县小吃 烤鱼 海鲜 铁板烧 韩国料理 粥 快餐 萨莉亚 桂林米粉 东南亚菜 甜点 农家菜 川菜 粤菜 湘菜 本帮菜 竹笋烤肉"]
-    },
-    list: ['盖浇饭', '兰州拉面', '面条', '砂锅', '水果沙拉']
+    markers: [],
+    runing: true,
+    markerNames: [],
+    index: -1
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    // 实例化腾讯地图API核心类
+    this.qqmapsdk = new QQMapWX({
+      key: 'JBEBZ-FTNHQ-QYE5L-GTVEI-VWTF3-MPF43'
+    });
   },
 
   /**
@@ -37,18 +40,19 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    // 菜单类型为默认时，重置marker类的数据
+    let menu = appInstance.globalData.menu
+    menu.type === 'default' && this.setData({
+      markers: [],
+      markerNames: []
+    })
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function() {
-    // 重置初始化状态
-    this.setData({
-      dishes: '神马',
-      btnText: '开始'
-    })
+  
   },
 
   /**
@@ -83,20 +87,22 @@ Page({
   },
 
   /**
-   * 
+   * 用户随机选择菜单
    */
-  changeEat: function() {
-    let list = wx.getStorageSync('menu')
-    let name = list[utils.random(list.length) - 1]
-    if (list.length === 0) return wx.showToast({
+  handleRandom: function() {
+    let menu = appInstance.globalData.menu
+    let menuType = menu.type
+    let isLocal = menuType === 'local'
+    let index = -1
+
+    if (menu.length === 0) return wx.showToast({
       title: '菜都没得，选啥子！！！',
       icon: 'none'
     })
-    if (list.length == 1) return wx.showToast({
-      title: '一个菜，还有好选的！！！',
+    if (menu.length === 1) return wx.showToast({
+      title: '一个菜，逗我呢！！！',
       icon: 'none'
     })
-    console.log(name, utils.random(list.length))
 
     if (runing) {
       console.log('定时暂停')
@@ -111,12 +117,111 @@ Page({
         btnText: '停止'
       })
       timer = setInterval(() => {
-        name = list[utils.random(list.length) - 1]
+        index = utils.random(menu.data.length) - 1
+        let name = menu.data[index]
         this.setData({
           dishes: name
+        })
+        isLocal && this.setData({
+          index
         })
       }, 60)
       runing = true
     }
+    this.setData({
+      runing
+    })
+  },
+
+  /**
+   * 获取本地美食列表
+   */
+  onTapLocation() {
+    wx.showLoading({
+      title: '获取附近美食'
+    })
+    // 搜索当前位置的美食
+    this.qqmapsdk.search({
+      keyword: '餐饮',
+      success: res => {
+        wx.hideLoading()
+        let globalDataMenu = appInstance.globalData.menu
+        let data = res.data.length > 10 ? res.data.slice(0, 10) : res.data
+        let markers = []
+        // 提取数据里的店名
+        let markerNames = data.map(item => {
+          markers.push({
+            title: item.title,
+            id: item.id,
+            latitude: item.location.lat,
+            longitude: item.location.lng,
+            address: item.address
+          })
+          return item.title
+        })
+        this.setData({
+          markers,
+          markerNames
+        })
+        globalDataMenu.type = 'local'
+        globalDataMenu.data = markerNames
+        wx.showToast({
+          title: '菜单已更新'
+        })
+      },
+      fail: res => {
+        console.error(res)
+      },
+      complete: res => {
+        console.log(res)
+      }
+    })
+  },
+
+  /**
+   * 使用微信内置地图查看指定坐标位置
+   */
+  openLocation() {
+    let selectedIndex = this.data.index
+    let markerNames = this.data.markerNames
+    let globalDataMenu = appInstance.globalData.menu
+    let selectedName = globalDataMenu.data[selectedIndex]
+    let isFoundMenu = markerNames.find(name => {
+      return name === selectedName
+    })
+    console.log('是否找到地图', isFoundMenu)
+
+    if (selectedIndex < 0) return
+
+    // 检查当前菜名是否存在坐标数据
+    if (!isFoundMenu) return wx.showToast({
+      title: '暂无该店地图信息',
+      icon: 'none'
+    })
+
+    let selectedMenu = this.data.markers[selectedIndex]
+    let obj = {
+      title: selectedMenu.title,
+      latitude: selectedMenu.latitude,
+      longitude: selectedMenu.longitude,
+      name: selectedMenu.title,
+      address: selectedMenu.address
+    }
+    wx.openLocation(obj)
+  },
+
+  /**
+   * 跳转到菜单页面
+  */
+  navigateToMenu() {
+    // 如果还在随机中，不允许跳转
+    if(runing) return wx.showToast({
+      title: '请停止随机选择',
+      icon: 'none'
+    })
+
+    wx.navigateTo({
+      url: '../menu/menu'
+    })
   }
 })
