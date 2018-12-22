@@ -26,7 +26,7 @@ Page({
     // 实例化腾讯地图API核心类
     this.qqmapsdk = new QQMapWX({
       key: 'JBEBZ-FTNHQ-QYE5L-GTVEI-VWTF3-MPF43'
-    });
+    })
   },
 
   /**
@@ -44,7 +44,8 @@ Page({
     let menu = appInstance.globalData.menu
     menu.type === 'default' && this.setData({
       markers: [],
-      markerNames: []
+      markerNames: [],
+      index: -1
     })
   },
 
