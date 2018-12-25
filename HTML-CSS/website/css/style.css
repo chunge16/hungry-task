@@ -11,7 +11,7 @@ body {
     font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 1.5;
-    color: #fff;
+    color: #000;
 }
 img {
     max-width: 100%;
@@ -22,111 +22,228 @@ ul {
 a {
     text-decoration: none;
 }
-button {
-    outline: none;
-    border: none;
+.bg-light-gray {
+  background-color: #f7f7f7
 }
-.layout {
-    padding: 100px 0;
-    width: 80%;
-    min-height: 100vh;
-    margin: 0 auto;
-    background-color: #fff;
+.bg-darkest-gray {
+  background-color: #222
 }
-.layout-title {
-    padding: 40px 0;
-    font-size: 18px;
-    color: #000;
-    text-align: center;
+section h1.title {
+  margin:  0 auto;
+  width: 100px;
+  font-size: 28px;
+  padding: 20px 0;
+  color: #000;
+  text-align: center;
+  border-bottom: 4px solid #e60000;
 }
-.layout-info {
-
+.border-bottom-wrap {
+  border-bottom: 1px solid #e8e8e8;
 }
 
-
-/***
-header
-**/
-
-#header {
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-    background: #f00000 url("../img/wallpaper.jpg") center/cover no-repeat;
-    text-align: center;
-}
-
-.header-menus {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-.header-menus > img {
-    width: 80px;
-    margin: 0 20px;
-}
-.header-menus ul {
-    display: flex;
-    margin: 0;
-    padding: 20px;
-}
-.header-menus li {
-    margin-right: 15px;
-    height: auto;
-}
-.header-menus a {
-    display: inline-block;
-    padding: 4px 12px;
-    border-bottom: 4px solid transparent;
-    color: #fff;
-    font-size: 20px;
-}
-.header-menus a:hover {
-    border-bottom: 4px solid #f00000;
-    color: #999;
-}
-.header-btn-more {
-    display: inline-block;
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: #fff;
-    border-radius: 8px;
-    color: #f00000;
-}
-.header-btn-more:hover {
-    opacity: .8;
-    cursor: pointer;
-    color: #fff;
-    background-color: #f00000;
-}
 
 /**
-coach
+header
 **/
-.coach {
-    color: #000;
-}
-.coach-member {
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
-}
-.coach-member-item {
-    width: 40%;
-}
-.coach-member-item > p {
-    text-align: left;
+.header-content {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  background: url("../img/wallpaper.jpg") center center/cover  no-repeat;
 }
 
 
+#line-up .line-up-title {
+  width: 80px;
+  font-size: 24px;
+  padding: 15px 0;
+  border-bottom: 4px solid #999;
+  text-align: center;
+}
 
+#line-up .player {
+  margin-bottom: 60px;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.player-name {
+  margin-left: 30px;
+  font-size: 20px;
+  color: #2e2e2e;
+  font-weight: bold;
+}
+.player-number {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 18px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  font-weight: bold;
+  background-color: #999;
+}
+
+
+#history {
+  background-color: #eee;
+}
+
+.history-wrap {
+  margin-bottom: 60px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 6px;
+  text-align: center;
+}
+.history-content p {
+  text-align: start;
+  line-height: 2;
+}
+
+#footer {
+  background-color: #000
+}
+.cus-logo {
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-arsenal .footer-box .container .cus-logo {
+  padding: 20px 0;
+  text-align: center;
+}
+.container .cus-logo .col-12 a {
+  background: url("http://cn.arsenal.com/Public/Home/img/navbar/sprite.png") no-repeat;
+  margin: 0 12px;
+  text-align: center;
+  vertical-align: top;
+  background-position: 0 0;
+  display: inline-block;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  width: 0;
+  height: 0;
+}
+.container .cus-logo .col-12 .logo-emirates {
+  width: 91px;
+  height: 66px;
+  background-position: -143px -3707px;
+}
+.container .cus-logo .col-12 .logo-emirates:hover {
+  background-position: -143px -3612px;
+}
+.container .cus-logo .col-12 .logo-puma {
+  width: 82px;
+  height: 66px;
+  background-position: -679px -3527px;
+}
+.container .cus-logo .col-12 .logo-puma:hover {
+  background-position: -593px -3527px;
+}
+.container .cus-logo .col-12 .logo-citroen {
+  width: 54px;
+  height: 53px;
+  background-position: -84px -3707px;
+}
+.container .cus-logo .col-12 .logo-citroen:hover {
+  background-position: -84px -3612px;
+}
+.container .cus-logo .col-12 .logo-coopertires {
+  width: 110px;
+  height: 53px;
+  background-position: -475px -3533px;
+}
+.container .cus-logo .col-12 .logo-coopertires:hover {
+  background-position: -355px -3533px;
+}
+.container .cus-logo .col-12 .logo-europcar {
+  margin-top: 12px;
+  width: 95px;
+  height: 36px;
+  background-position: -573px -3769px;
+}
+.container .cus-logo .col-12 .logo-europcar:hover {
+  background-position: -467px -3769px;
+}
+.container .cus-logo .col-12 .logo-gatorade {
+  width: 50px;
+  height: 53px;
+  background-position: -351px -3707px;
+}
+.container .cus-logo .col-12 .logo-gatorade:hover {
+  background-position: -351px -3612px;
+}
+.container .cus-logo .col-12 .logo-girard {
+  margin-top: 4px;
+  width: 103px;
+  height: 53px;
+  background-position: -242px -3533px;
+}
+.container .cus-logo .col-12 .logo-girard:hover {
+  background-position: -130.5px -3533px;
+}
+.container .cus-logo .col-12 .logo-indesit {
+  width: 85px;
+  height: 53px;
+  background-position: -425px -3707px;
+}
+.container .cus-logo .col-12 .logo-indesit:hover {
+  background-position: -425px -3612px;
+}
+.container .cus-logo .col-12 .logo-markets {
+  width: 120px;
+  height: 33px;
+  background-position: -342px -3774px;
+  margin-top: 13px;
+}
+.container .cus-logo .col-12 .logo-markets:hover {
+  background-position: -212px -3774px;
+}
+.container .cus-logo .col-12 .logo-vitality {
+  margin-top: 3px;
+  width: 84px;
+  height: 50px;
+  background-position: -87px -3471px;
+}
+.container .cus-logo .col-12 .logo-vitality:hover {
+  background-position: 3px -3471px;
+}
+.container .cus-logo .col-12 .logo-premier {
+  width: 135px;
+  height: 53px;
+  background-position: -236px -3398px;
+}
+.container .cus-logo .col-12 .logo-premier:hover {
+  background-position: -236px -3463px;
+}
+.copyright-box {
+  padding: 35px 0;
+  color: #444;
+  border-top: 1px solid #272727;
+}
+.copyright-box ul {
+  margin:  0 auto;
+  width: 80%;
+  font-size: 12px;
+}
+.copyright-box a {
+  color: #444;
+}
+
+.copyright-box a:hover {
+  color: #eee;
+  text-decoration: none;
+}
 
 
 

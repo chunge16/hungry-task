@@ -1,47 +1,343 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Arsenal-Homepage</title>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Arsenal-Homepage</title>
 </head>
 <body>
 <header id="header">
-    <nav class="navbar header-menus">
-        <img src="img/logo.svg" alt="sorry">
-        <ul>
-            <li><a href="#">intro</a></li>
-            <li><a href="#">intro</a></li>
-            <li><a href="#">intro</a></li>
-            <li><a href="#">intro</a></li>
-            <li><a href="#">intro</a></li>
-        </ul>
-    </nav>
-    <button class="header-btn-more" type="button">Tell Me More</button>
-</header>
-<section class="layout coach">
-    <h3 class="layout-title">教练组</h3>
-    <div class="coach-member">
-        <div class="coach-member-item">
-            <img src="" alt="">
-            <h4>副主教练</h4>
-            <p>史堤夫·保特 （Stephen Andrew "Steve" Bould ，1962年1月16日－），英格兰人，前足球运动员，现为英超球会阿森纳的副总教练。</p>
-        </div>git push origin master
-        <div class="coach-member-item">
-            <img src="" alt="">
-            <h4>主教练</h4>
-            <p>阿尔塞纳·温格，OBE（法语：Arsène Wenger，法语发音：[aʁsɛn vɛŋ(ɡ)ɛʁ]，1949年10月22日－），是一名法国籍著名足球教练，现时执教英格兰足球超级联赛俱乐部阿森纳。温格自1996年开始执教阿森纳，是阿森纳史上任期最长和执教成绩最好的教练。</p>
-        </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="https://cn.arsenal.com/Public/Home/img/navbar/arsenal-crest.png" style="width: 50px;height: auto">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="line-up">lineUp</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="history">history</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
     </div>
+  </nav>
+  <div class="bg-light-gray header-content">
+    <div class="intro">
+      <div class="intro-title">
+
+      </div>
+    </div>
+  </div>
+  </div>
+</header>
+<section id="line-up" class="module">
+  <div class="container">
+    <!-- Content here -->
+    <div class="row">
+      <div class="col-12">
+        <h1 class="title">
+          阵容
+        </h1>
+      </div>
+    </div>
+    <div class="row border-bottom-wrap">
+      <div class="col-12 mb-5">
+        <h2 class="line-up-title">门将</h2>
+      </div>
+      <div class="col-4">
+        <div class="player">
+          <img class="player-avatar" src="https://asnimg.bj.bcebos.com/2018-06-20/5b29c933c8284.jpg" width="120"
+               height="67">
+          <span class="player-name">切赫</span>
+          <span class="player-number">1</span>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="player">
+          <img class="player-avatar" src="https://asnimg.bj.bcebos.com/2018-06-20/5b29c985e8ec5.jpg" width="120"
+               height="67">
+          <span class="player-name">莱诺</span>
+          <span class="player-number">19</span>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="player">
+          <img class="player-avatar" src="http://asnimg.bj.bcebos.com/2018-10-18/5bc7ff3c3b725.jpg" width="120"
+               height="67">
+          <span class="player-name">马丁内斯</span>
+          <span class="player-number">26</span>
+        </div>
+      </div>
+    </div>
+    <div class="row border-bottom-wrap">
+      <div class="col-12 mb-5 mt-5">
+        <h2 class="line-up-title">后卫</h2>
+      </div>
+      <div class="col-4">
+        <div class="player">
+          <img class="player-avatar" src="https://asnimg.bj.bcebos.com/2018-06-20/5b29ceef97d5e.jpg" width="120"
+               height="67">
+          <span class="player-name">贝莱林</span>
+          <span class="player-number">2</span>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="player">
+          <img class="player-avatar" src="https://asnimg.bj.bcebos.com/2018-06-20/5b29cee3591e8.jpg" width="120"
+               height="67">
+          <span class="player-name">蒙雷亚尔</span>
+          <span class="player-number">18</span>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="player">
+          <img class="player-avatar" src="https://asnimg.bj.bcebos.com/2018-07-11/5b45840948b31.jpg" width="120"
+               height="67">
+          <span class="player-name">帕帕斯塔索普洛斯</span>
+          <span class="player-number">5</span>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="player">
+          <img class="player-avatar" src="https://asnimg.bj.bcebos.com/2018-06-20/5b29cf901106d.jpg" width="120"
+               height="67">
+          <span class="player-name">穆斯塔菲</span>
+          <span class="player-number">20</span>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="player">
+          <img class="player-avatar" src="https://asnimg.bj.bcebos.com/2018-06-20/5b29ced96a3ca.jpg" width="120"
+               height="67">
+          <span class="player-name">科斯切尔尼</span>
+          <span class="player-number">6</span>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="player">
+          <img class="player-avatar" src="https://asnimg.bj.bcebos.com/2018-06-20/5b29cf5dd539c.jpg" width="120"
+               height="67">
+          <span class="player-name">科拉希纳茨</span>
+          <span class="player-number">31</span>
+        </div>
+      </div>
+    </div>
+    <div class="row border-bottom-wrap">
+      <div class="col-12 mb-5 mt-5">
+        <h2 class="line-up-title">中场</h2>
+      </div>
+      <div class="col-4">
+        <div class="player">
+          <img class="player-avatar" src="https://asnimg.bj.bcebos.com/2018-06-20/5b29cf07a6109.jpg" width="120"
+               height="67">
+          <span class="player-name">埃尔内尼</span>
+          <span class="player-number">4</span>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="player">
+          <img class="player-avatar" src="https://asnimg.bj.bcebos.com/2018-07-11/5b45a6902a9c8.jpg" width="120"
+               height="67">
+          <span class="player-name">托雷拉</span>
+          <span class="player-number">11</span>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="player">
+          <img class="player-avatar" src="https://asnimg.bj.bcebos.com/2018-06-20/5b29cec2e7240.jpg" width="120"
+               height="67">
+          <span class="player-name">姆希塔良</span>
+          <span class="player-number">7</span>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="player">
+          <img class="player-avatar" src="https://asnimg.bj.bcebos.com/2018-06-20/5b29ceadbaafe.jpg" width="120"
+               height="67">
+          <span class="player-name">厄齐尔</span>
+          <span class="player-number">10</span>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="player">
+          <img class="player-avatar" src="https://asnimg.bj.bcebos.com/2018-06-20/5b29ceff112bd.jpg" width="120"
+               height="67">
+          <span class="player-name">扎卡</span>
+          <span class="player-number">34</span>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="player">
+          <img class="player-avatar" src="https://asnimg.bj.bcebos.com/2018-06-20/5b29ceb9db04a.jpg" width="120"
+               height="67">
+          <span class="player-name">拉姆塞</span>
+          <span class="player-number">8</span>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="player">
+          <img class="player-avatar" src="https://asnimg.bj.bcebos.com/2018-07-17/5b4d970f262b2.jpg" width="120"
+               height="67">
+          <span class="player-name">贡多齐</span>
+          <span class="player-number">29</span>
+        </div>
+      </div>
+    </div>
+    <div class="row border-bottom-wrap">
+      <div class="col-12 mb-5 mt-5">
+        <h2 class="line-up-title">前锋</h2>
+      </div>
+      <div class="col-4">
+        <div class="player">
+          <img class="player-avatar" src="https://asnimg.bj.bcebos.com/2018-06-20/5b29cf4aeceab.jpg" width="120"
+               height="67">
+          <span class="player-name">拉卡泽特</span>
+          <span class="player-number">9</span>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="player">
+          <img class="player-avatar" src="https://asnimg.bj.bcebos.com/2018-06-20/5b29cf212c255.jpg" width="120"
+               height="67">
+          <span class="player-name">伊沃比</span>
+          <span class="player-number">17</span>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="player">
+          <img class="player-avatar" src="https://asnimg.bj.bcebos.com/2018-06-20/5b29ced0294a0.jpg" width="120"
+               height="67">
+          <span class="player-name">奥巴梅扬</span>
+          <span class="player-number">14</span>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="player">
+          <img class="player-avatar" src="https://asnimg.bj.bcebos.com/2018-06-20/5b29cf2bb7bbe.jpg" width="120"
+               height="67">
+          <span class="player-name">维尔贝克</span>
+          <span class="player-number">23</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-<section></section>
-<section></section>
-<section></section>
-<section></section>
-<footer></footer>
+<section id="history">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="title">
+          历史
+        </h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 mt-5">
+        <div class="history-wrap">
+          <div class="history-content">
+            <h2>
+              <a href="http://cn.arsenal.com/home/news/details/id/999992230" target="_blank">温格时代</a>
+            </h2>
+            <p>自格拉汉姆离开之后，阿森纳请来了一位默默无闻的法国主帅。没有人料到，他将给俱乐部带来如此深远的改变。</p>
+          </div>
+          <a href="http://cn.arsenal.com/home/news/details/id/999992230" target="_blank"><img
+                  src="https://cn.arsenal.com/Uploads/Picture/2016-10-25/580f021ca3cd9.png" class="img-responsive"></a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 mt-5">
+        <div class="history-wrap">
+          <a href="http://www.arsenal.com/history/arsenal-stadium-highbury}" target="_blank"><img
+                  src="https://cn.arsenal.com/Uploads/Picture/2016-10-25/580f0539874fd.png" class="img-responsive mb20"></a>
+          <div class="history-content">
+            <h2>
+              <a href="http://www.arsenal.com/history/arsenal-stadium-highbury}" target="_blank">阿森纳球场：海布里</a>
+            </h2>
+            <p>阿森纳球场，它的另一个名字“海布里球场”更为人们所熟知。自1913年至2006年期间，它一直是俱乐部的主场。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 mt-5">
+        <div class="history-wrap">
+          <div class="history-content">
+            <h2>
+              <a href="http://www.arsenal.com/arsenal-history/arsenal-s-heritage" target="_blank">阿森纳的传承</a>
+            </h2>
+            <p>阿森纳不仅仅是一家历史悠久的俱乐部。他是历史、传统和胜利的代名词。除了满载荣誉的过去和现在，阿森纳同样关注自身的发展与未来。</p>
+          </div>
+          <a href="http://www.arsenal.com/arsenal-history/arsenal-s-heritage" target="_blank"><img src="https://cn.arsenal.com/Uploads/Picture/2016-10-25/580f058ccc6ec.png" class="img-responsive"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer id="footer">
+  <div class="container">
+    <div class="row cus-logo">
+      <div class="col-12">
+        <a href="http://www.emirates.com" target="_blank" class="logo-emirates">Emirates</a>
+      </div>
+      <div class="col-12">
+        <a href="http://www.puma.com/" target="_blank" class="logo-puma">Puma</a>
+        <a href="http://www.coopertire.co.uk/" target="_blank" class="logo-coopertires">Cooper Tires</a>
+        <a href="http://www.gatoradefootball.com/" target="_blank" class="logo-gatorade">Gatorade</a>
+        <br>
+        <a href="http://www.markets.com/?bid=24570" target="_blank" class="logo-markets">Markets.com</a>
+        <a href="http://arsn.al/vitalityfooterdotcom" target="_blank" class="logo-vitality">Vitality</a>
+        <a href="http://www.premierleague.com" target="_blank" class="logo-premier">Premier League</a>
+      </div>
+    </div>
+  </div>
+  <div class="copyright-box">
+    <ul class="d-flex justify-content-around">
+      <li>
+        © 阿森纳 2018 </li>
+      <li>
+        <a href="http://www.arsenal.com/terms-of-use" target="_blank">使用条款</a> </li>
+      <li>
+        <a href="http://www.arsenal.com/privacy-policy" target="_blank">隐私政策</a>  </li>
+      <li>
+        <a href="http://www.arsenal.com/cookie-policy" target="_blank">Cookie政策</a>  </li>
+      <li>
+        <a href="http://www.arsenal.com/website-accessibility" target="_blank">网站访问权限声明</a>
+      </li>
+      <li>
+        <a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备112348923849023</a>
+      </li>
+    </ul>
+  </div>
+</footer>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 </body>
 </html>
