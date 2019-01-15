@@ -14,7 +14,7 @@ Page({
     dishes: '神马',
     btnText: '开始',
     markers: [],
-    runing: true,
+    runing: false,
     markerNames: [],
     index: -1
   },

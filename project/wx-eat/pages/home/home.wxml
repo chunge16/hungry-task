@@ -12,10 +12,12 @@
       <text bindtap='openLocation'>查看餐厅位置</text>
     </view>
   </view>
-  <view class='menu' bindtap='navigateToMenu'>
-    <icon class='iconfont icon-menu'></icon>
+  <view class='ct-menu {{runing ? "ct-menu-animation" : ""}}' >
+    <view class='menu' bindtap='navigateToMenu'>
+      <icon class='iconfont icon-menu'></icon>
+    </view>
+    <view class='location' bindtap='onTapLocation'>
+      <icon class='iconfont icon-location'></icon>
+    </view>
   </view>
-  <view class='location' bindtap='onTapLocation'>
-    <icon class='iconfont icon-location'></icon>
-  </view>
-</view>                 
+</view>

@@ -24,10 +24,22 @@
   border-radius: 60rpx;
 }
 
-.menu {
+.ct-menu {
   position: absolute;
+  right: 0;
+  bottom: 40rpx;
+  transition: all .6s;
+}
+.ct-menu-animation {
+  bottom: -130px;
+  opacity: 0;
+}
+
+.menu {
+  /* position: absolute;
   bottom: 200rpx;
-  right: 40rpx;
+  right: 40rpx; */
+  margin: 40rpx;
   padding: 10rpx;
   width: 60rpx;
   height: 60rpx;
@@ -39,9 +51,10 @@
 }
 
 .location {
-  position: absolute;
+  /* position: absolute;
   bottom: 100rpx;
-  right: 40rpx;
+  right: 40rpx; */
+  margin: 40rpx;
   padding: 10rpx;
   width: 60rpx;
   height: 60rpx;
@@ -77,5 +90,5 @@
   display: inline-block;
   color: #666;
   padding: 4rpx;
-  border-bottom: 1px dashed #999
+  border-bottom: 1px dashed #999;
 }
