@@ -104,14 +104,14 @@ a {
 
 **/
 @media (max-width: 450px) {
+	#clock-box {
+		font-size: 20px;
+	}
+	#clock {
+		margin-left: 15px;
+	}
 	#clock .digit {
-		font-size: 18px;
+		font-size: 22px;
 	}
-	#text {
-		width: 272px;
-		height: 560px;
-		left: 128px;
-		top: 80px;
-		position: absolute;
-	}
+
 }

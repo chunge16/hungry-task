@@ -1,5 +1,5 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+﻿<!DOCTYPE html>
+<html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0" />
@@ -57,10 +57,10 @@
                 <span class="say">但遇见了你以后</span><br>
                 <span class="say"> 我的世界似乎多了一抹彩色</span><br>
                 <span class="say">所以...</span><br>
-                <span class="say">我想带你去我看到过最美的风景</span><br>
+                <span class="say">我想带你去看我眼中最美的风景</span><br>
                 <span class="say">想和你一起经历风风雨雨</span><br>
                 <span class="say">想和你一起拥有最美的爱情</span><br>
-                <span class="say">There are 4 steps to happiness: 1 you 2 me 3 our hearts 4 together. </span><br>
+                <span class="say">There are 4 steps to happiness: <br> 1 you 2 me 3 our hearts 4 together. </span><br>
                 <span class="say"><span class="space"></span> -- 正春敬上</span> </font>
                 <br/>
                 <br/>
@@ -139,6 +139,7 @@
     var hold = 1;
 
     canvas.click(function (e) {
+      console.log('touchend');
       var offset = canvas.offset(), x, y;
       x = e.pageX - offset.left;
       y = e.pageY - offset.top;
