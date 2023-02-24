@@ -20,9 +20,9 @@
 
 #### 常见的组件
 
-- [lazyimg](http://chunge2016.online/hungry-task/JavaScript/lazyimg/)
-- [tabs](http://chunge2016.online/hungry-task/JavaScript/js-component-tab/)
-- [waterfall-sinanews](http://chunge2016.online/hungry-task/JavaScript/waterfall-sinanews/)
+- [lazyimg](https://chunge16.github.io/hungry-task/JavaScript/lazyimg/)
+- [tabs](https://chunge16.github.io/hungry-task/JavaScript/js-component-tab/)
+- [waterfall-sinanews](https://chunge16.github.io/hungry-task/JavaScript/waterfall-sinanews/)
 
 ---
 
@@ -65,7 +65,7 @@ Hi, this is weather report app
 
 **关键词**：`JavaScript` `MVVM` `DOM`等
 
-**项目预览**： [wheel-MVVM](http://chunge2016.online/hungry-task/JavaScript/wheel-MVVM/)
+**项目预览**： [wheel-MVVM](https://chunge16.github.io/hungry-task/JavaScript/wheel-MVVM/)
 
 ---
 #### node-server
@@ -84,4 +84,4 @@ Hi, this is weather report app
 
 **关键词**：`JavaScript` `DOM` `Ajax` `CSS3`等
 
-**项目预览**： [Music](http://chunge2016.online/hungry-task/JavaScript/Music-FM/)
+**项目预览**： [Music](https://chunge16.github.io/hungry-task/JavaScript/Music-FM/)
